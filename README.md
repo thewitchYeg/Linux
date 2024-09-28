@@ -84,7 +84,7 @@ You will see an image similar to:
 
 ## Step 2: Add a Custom Arch Linux Image Using the Web Console
 
-**1.Install archiso:**
+### 1.Install archiso: ###
 
 Run the following command:
 
@@ -95,7 +95,7 @@ Run the following command:
 
 archiso is a tool for building Arch Linux live CD/USB ISO images, which is essential for creating a custom image.
 
-**2.Prepare a Custom Profile:**
+### 2.Prepare a Custom Profile:
 
 Copy the default releng profile to a directory where you can customize it:
 
@@ -104,17 +104,17 @@ Copy the default releng profile to a directory where you can customize it:
 ![screenshot]<img src="assets/4.png" alt="urs">
 
 
-**3.Customize the Profile:**
+### 3.Customize the Profile:
 
 Edit the packages.x86_64 file to include the packages you want to install.
 
-**4.Add Custom Files to the airootfs Directory:**
+### 4.Add Custom Files to the airootfs Directory:
 
 Copy any custom scripts or files you want to include in your image
 
     cp ~/myscript.sh ~/custom-archiso/airootfs/root/
 
-**5.Build the ISO:**
+### .Build the ISO:
 
 Navigate to your custom profile directory:
  cd ~/custom-archiso
@@ -128,7 +128,7 @@ Build the ISO using the following command:
 ![screenshot]<img src="assets/8.png" alt="urs">
 
 
-**6.Upload the ISO to Your Cloud Provider:**
+### 6.Upload the ISO to Your Cloud Provider: ###
 
 Once the ISO is built, you need to upload it to DigitalOcean or another cloud provider to use it for creating virtual machines.
 
@@ -136,26 +136,26 @@ Once the ISO is built, you need to upload it to DigitalOcean or another cloud pr
 
 ## Step 3: Create a Droplet Running Arch Linux Using the DigitalOcean Web Console
 
-**1.Create a DigitalOcean Account:**
+### 1.Create a DigitalOcean Account: ###
 Visit DigitalOcean and create an account: https://www.digitalocean.com/
 
-**2.Log In to DigitalOcean:**
+### 2.Log In to DigitalOcean: ###
 
 After logging in, navigate to the Droplets section.
 
-**3.Select a Region:**
+### 3.Select a Region: ###
 
 Choose the region closest to you for the Droplet location.
 
 ![screenshot]<img src="assets/region.png" alt="urs">
 
-**4.Create a Droplet:**
+### 4.Create a Droplet: ###
 
 ![screenshot]<img src="assets/droplets.png" alt="urs">
 
 Click Create Droplet.
 
-**5.Choose Custom Images:**
+### 5.Choose Custom Images:###
 
 Select your uploaded Arch Linux image to continue.
 
@@ -175,7 +175,7 @@ Click New SSH Key and paste your public key.
 
 Complete the setup and create the Droplet.
 
-**9.Connect the droplet 
+**9.Connect the droplet:**
 
 connect your droplet to the ssh key.
 
@@ -200,34 +200,30 @@ Begin by creating a file named cloud-init.yaml on your local machine. This file 
     nano cloud-init.yaml
 
 
-**Example of a cloud-init.yaml file:**
 
+Add the following content to your cloud-init.yaml file:
 
-**users**:
+```
+#cloud config
+users:
 
-- name: 
-    - customuser
-    sudo: 
-    - ['ALL=(ALL) NOPASSWD:ALL']
-
-- groups:
-     - admin
-     - sudo
-
-- shell: 
-    - /bin/zsh
-
-    ssh-authorized-keys:
+- name:customuser
+  sudo:['ALL=(ALL) NOPASSWD:ALL']
+  groups:admin/sudo
+  shell: /bin/zsh
+  ssh-authorized-keys:
     - ssh-rsa AAAAB3...your_public_key
 
 
-**packages:**
+packages:
   - neofetch
   - vim
   - curl
   - git
 
-ssh_pwauth: false
+ ssh_pwauth: false 
+```
+
 
 **Note!** SSH password authentication is disabled (ssh_pwauth: false), which enhances security by only allowing SSH key authentication.
 
@@ -243,6 +239,7 @@ When creating the Droplet, paste the contents of your cloud-init.yaml file in th
 When the Droplet is created, the cloud-init script will run on the first boot, setting up your user and other configurations automatically.
 
 -------------------------------------------
+
 
 ## Step 5: Connect to Your Server Using Your SSH Keys
 
@@ -274,3 +271,4 @@ Upon successful connection, you will see a welcome message indicating that you a
 **Note!**  Ensure that your private key file has the correct permissions. On Linux or macOS, you can set the permissions using:
 
      chmod 600 path_to_your_private_key
+
