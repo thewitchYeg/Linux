@@ -212,7 +212,7 @@ connect your droplet to the ssh key.
 Cloud-init is a tool used to automate the initial setup of cloud instances. It allows you to define configuration files that can set up users, install packages, and perform other setup tasks automatically when the instance boots for the first time.
 Cloud-Init Configuration File:
 
-**1.Create a Cloud-Init Configuration File:**
+### 1.Create a Cloud-Init Configuration File:
 
 Begin by creating a file named cloud-init.yaml on your local machine. This file will contain the configurations necessary for your droplet. You can use your preferred text editor, such as nano or vim, to create and edit this file.
 
@@ -249,11 +249,11 @@ packages:
 
 
 
-**2.Upload the Cloud-Init File:**
+### 2.Upload the Cloud-Init File:
 
 When creating the Droplet, paste the contents of your cloud-init.yaml file in the User Data section.
 
-**3.Deploy the Droplet:**
+### 3.Deploy the Droplet:
 
 When the Droplet is created, the cloud-init script will run on the first boot, setting up your user and other configurations automatically.
 
