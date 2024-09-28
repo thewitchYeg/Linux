@@ -281,7 +281,9 @@ For example, if your private key is located at C:\Users\User\.ssh\do3 and your d
     ssh -i C:\Users\User\.ssh\do3 arch@64.23.248.163
 
 ### 3.Execute the Command
-Press Enter to execute the command. If this is your first time connecting to the droplet, you may see a prompt asking if you want to continue connecting. Type yes and hit Enter.
+Press Enter to execute the command. 
+
+If this is your first time connecting to the droplet, you may see a prompt asking if you want to continue connecting. Type yes and hit Enter.
 
 ### 4.Verify Connection
 Upon successful connection, you will see a welcome message indicating that you are now logged into your Arch Linux droplet. You can begin managing your server directly from the command line.
