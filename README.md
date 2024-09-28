@@ -172,7 +172,7 @@ Choose the region closest to you for the Droplet location.
 
 Click Create Droplet.
 
-### 5.Choose Custom Images:###
+### 5.Choose Custom Images:
 
 Select your uploaded Arch Linux image to continue.
 
