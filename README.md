@@ -201,7 +201,7 @@ connect your droplet to the ssh key.
 
     ssh -i .ssh/do-key arch@64.23.158.238
 
-![screenshot]<img src="assets/issh.png" alt="urs">
+<img src="assets/issh.png" alt="urs">
 
 -------------------------------------------------------
 
