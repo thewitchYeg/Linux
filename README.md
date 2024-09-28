@@ -166,11 +166,11 @@ Choose the region closest to you for the Droplet location.
 
 ### 4.Create a Droplet: ###
 
-
+Click Create Droplet.
 
 <img src="assets/droplets.png" alt="urs">
 
-Click Create Droplet.
+
 
 ### 5.Choose Custom Images:
 
