@@ -122,7 +122,7 @@ Copy any custom scripts or files you want to include in your image
 
     cp ~/myscript.sh ~/custom-archiso/airootfs/root/
 
-### .Build the ISO:
+### 5.Build the ISO:
 
 Navigate to your custom profile directory:
 
