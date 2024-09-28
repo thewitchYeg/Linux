@@ -16,19 +16,23 @@ Private Key: This key is kept secure on your local machine and should never be s
 Why Should You Use SSH Keys?
 
 Security: They provide a more secure method of authentication compared to passwords.
+
 Convenience: Once set up, you can log in without entering a password each time.
+
 Automation: They are essential for automating tasks like deploying code or running scripts on remote servers.
 
-***How to Generate SSH Keys:***
+----------
+### How to Generate SSH Keys:
 
-**1.Open Command Prompt or PowerShell**
+### 1.Open Command Prompt or PowerShell
 
 Type the command
 
 
     ssh-keygen -t ed25519 -f C:\Users\your-user-name\.ssh\do-key -C "youremail@email.com"
 
-![screenshot]<img src="assets/1.png">
+
+<img src="assets/1.png">
 
 
 This command starts the process of generating a new SSH key pair.
@@ -40,7 +44,7 @@ This command starts the process of generating a new SSH key pair.
 -C = comment (attaches a comment to a key)
 
 
-**2.Enter the File in Which to Save the Key:**
+### 2.Enter the File in Which to Save the Key:
 
 You will be prompted with:
 
@@ -48,7 +52,7 @@ Enter file in which to save the key (/home/yourusername/.ssh/id_rsa):
 
 Press Enter to accept the default location and file name, or specify the path where you want to save the key.
 
-**3.Enter Passphrase:**
+### 3.Enter Passphrase:
 
 You will be prompted with:
 
@@ -56,7 +60,7 @@ Enter passphrase (empty for no passphrase):
 
 Type a passphrase for an extra layer of security, or press Enter to leave it empty for no passphrase.
 
-**4.Confirm the Passphrase:**
+### 4.Confirm the Passphrase:
 
 You will be prompted again with:
 
@@ -77,7 +81,9 @@ Congratulations! Your new SSH key pair has been successfully created and saved!
 
 You will see an image similar to:
 
-![screenshot]<img src="assets/key image.png" alt="keyimage">
+
+
+<img src="assets/key image.png" alt="keyimage">
 
 ---
 
@@ -101,7 +107,9 @@ Copy the default releng profile to a directory where you can customize it:
 
     cp -r /usr/share/archiso/configs/releng/ ~/custom-archiso
 
-![screenshot]<img src="assets/4.png" alt="urs">
+
+
+<img src="assets/4.png" alt="urs">
 
 
 ### 3.Customize the Profile:
@@ -117,15 +125,20 @@ Copy any custom scripts or files you want to include in your image
 ### .Build the ISO:
 
 Navigate to your custom profile directory:
- cd ~/custom-archiso
 
-![screenshot]<img src="assets/6.png" alt="urs">
+    cd ~/custom-archiso
+
+
+
+<img src="assets/6.png" alt="urs">
 
 Build the ISO using the following command:
 
     sudo mkarchiso -v .
 
-![screenshot]<img src="assets/8.png" alt="urs">
+
+
+<img src="assets/8.png" alt="urs">
 
 
 ### 6.Upload the ISO to Your Cloud Provider: ###
@@ -147,11 +160,15 @@ After logging in, navigate to the Droplets section.
 
 Choose the region closest to you for the Droplet location.
 
-![screenshot]<img src="assets/region.png" alt="urs">
+
+
+<img src="assets/region.png" alt="urs">
 
 ### 4.Create a Droplet: ###
 
-![screenshot]<img src="assets/droplets.png" alt="urs">
+
+
+<img src="assets/droplets.png" alt="urs">
 
 Click Create Droplet.
 
@@ -161,21 +178,23 @@ Select your uploaded Arch Linux image to continue.
 
 Select Custom Images and pick the Arch Linux image you previously uploaded.
 
-**6.Configure the Droplet:**
+### 6.Configure the Droplet:
 
 Select the Droplet specifications like CPU, RAM, and storage.
 
-**7.Add Your SSH Key:**
+### 7.Add Your SSH Key:
 
 Click New SSH Key and paste your public key.
 
-![screenshot]<img src="assets/sshdroplet.png" alt="urs">
 
-**8.Finalize and Create the Droplet:**
+
+<img src="assets/sshdroplet.png" alt="urs">
+
+### 8.Finalize and Create the Droplet:
 
 Complete the setup and create the Droplet.
 
-**9.Connect the droplet:**
+### 9.Connect the droplet:
 
 connect your droplet to the ssh key.
 
@@ -271,4 +290,7 @@ Upon successful connection, you will see a welcome message indicating that you a
 **Note!**  Ensure that your private key file has the correct permissions. On Linux or macOS, you can set the permissions using:
 
      chmod 600 path_to_your_private_key
+--------------------
+## Summary
 
+To wrap things up, you've now set up your own Arch Linux droplet on DigitalOcean, complete with SSH keys for secure access and automated configurations using Cloud-Init. You’ve basically built a cloud server from scratch, which is pretty cool! Whether you use it for projects, coding, or just to explore, your server is now ready for whatever you want to do next. It’s like having your own little corner of the internet!
