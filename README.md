@@ -244,4 +244,33 @@ When the Droplet is created, the cloud-init script will run on the first boot, s
 
 -------------------------------------------
 
-By following these steps, you will have a fully functional Arch Linux Droplet, customized and automated using cloud-init.
+## Step 5: Connect to Your Server Using Your SSH Keys
+
+
+Now that your Arch Linux droplet is set up and running, it’s time to connect to your server securely using SSH keys. 
+
+### 1.Open Your Terminal
+Launch your terminal application:
+
+For Windows, use Command Prompt or PowerShell.
+For macOS or Linux, open the Terminal.
+
+### 2.Use the SSH Command
+To connect to your droplet, use the SSH command along with the path to your private key file and your droplet's IP address.
+
+     ssh -i path_to_your_private_key username@droplet_ip_address
+
+For example, if your private key is located at C:\Users\User\.ssh\do3 and your droplet's IP address is 64.23.248.163, the command would be:
+
+    ssh -i C:\Users\User\.ssh\do3 arch@64.23.248.163
+
+### 3.Execute the Command
+Press Enter to execute the command. If this is your first time connecting to the droplet, you may see a prompt asking if you want to continue connecting. Type yes and hit Enter.
+
+### 4.Verify Connection
+Upon successful connection, you will see a welcome message indicating that you are now logged into your Arch Linux droplet. You can begin managing your server directly from the command line.
+
+
+**Note!**  Ensure that your private key file has the correct permissions. On Linux or macOS, you can set the permissions using:
+
+     chmod 600 path_to_your_private_key
